@@ -28,33 +28,60 @@
 
 # print(solution(5,[2,4],[1,3,5]))
 
+# def solution(n, lost, reserve):
+#     if len(lost) == 0:
+#         return n
+
+#     for i in reserve:
+#         for j in lost:
+#             if i == j:
+#                 lost.remove(i)
+#                 reserve.remove(j)
+#             elif i-1 == j:
+#                 lost.remove(j)
+#             elif i+1 == j:
+#                 lost.remove(j)
+#     return n - len(lost)
+
+# print(solution(5,[2,3,4],[1,3,5]))
+
+# def solution(n, lost, reserve):
+#     if len(lost) == 0:
+#         return n
+
+#     for j in lost:
+#         for i in reserve:
+#             if i == j:
+#                 lost.remove(j)
+#                 reserve.remove(i)
+#             elif i-1 == j:
+#                 lost.remove(j)
+#                 reserve.remove(i)
+#             elif i+1 == j:
+#                 lost.remove(j)
+#                 reserve.remove(i)
+#     return n - len(lost)
+
+# def burrow(n, lost, reserve):
+#     in
+
+b1 = set([1,2,3,4,5])
+b2 = set([3,5])
+
+b3= b1.intersection(b2)
+
+b4 = b1.difference(b3)
+
+print(b4)
+
 def solution(n, lost, reserve):
-    if len(lost) == 0:
-        return n
+    lost = set(lost)
+    reserve = set(reserve)
+    common = lost.intersection(reserve)
 
-    for i in reserve:
-        for j in lost:
-            if i == j:
-                lost.remove(i)
-                reserve.remove(j)
-            elif i-1 == j:
-                lost.remove(j)
-            elif i+1 == j:
-                lost.remove(j)
-    return n - len(lost)
+    lost = list(lost.difference(common))
+    reserve = list(reserve.difference(common))
 
-print(solution(5,[2,3,4],[1,3,5]))
+    
 
-def solution(n, lost, reserve):
-    if len(lost) == 0:
-        return n
-
-    for j in lost:
-        for i in reserve:
-            if i == j:
-                continue
-            elif i-1 == j:
-                lost.remove(j)
-            elif i+1 == j:
-                lost.remove(j)
-    return n - len(lost)
+    
