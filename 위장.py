@@ -1,24 +1,16 @@
+from functools import reduce
+
+arr = [["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"], ["green_turbansdff", "headgear"], ["red_sunglasses", "eyewear"]]
+
+my_map = {}
 def solution(clothes):
-    cloth_list = []
-    for cloth in clothes:
-        cloth_class = cloth[1]
-        cloth = cloth[0]
+    for c_name, c_type in arr:
+        if c_type in my_map:
+            my_map[c_type] += 1
+        else:
+            my_map[c_type] = 1
 
-        cloth = {
-        "cloth_class": cloth_class,
-        "cloth": cloth
-                }
+    values = my_map.values()
+    return reduce(lambda acc, curr: acc * (curr +1), values, 1)-1
 
-        cloth_list.append(cloth)
-    print(cloth_list)
-
-    n = len(cloth_list)
-    for i in range(len(cloth_list)-1):
-        if cloth_list[i]
-    
-
-
-
-
-
-solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]])
+print(solution(arr))
