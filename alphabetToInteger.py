@@ -22,3 +22,4 @@ solution=Solution()
 
 print(solution.freqAlphabets("1326#"))
                 
+                
