@@ -6,16 +6,18 @@ table = {
 
 class Solution:
     def freqAlphabets(self, string):
-        result =[]
-        for i in range(len(string), 0 , -1):
-            if string[i] == "#":
-                print("hi")
-                s = string[i-2] + string[i-1]
-                result.append(table[s])
+        result = ""
+        skip = False
+        for i in range(len(string)):
+            if skip or string[i] == "#":
+                skip = False
+                continue
+            if i < len(string) - 2 and string[i + 2] == "#":
+                result += table[string[i] + string[i+1]]
+                skip = True
             else:
-                s = string[i]
-                result.append(table[s])
-        result.reverse()
+                result += table[string[i]] 
+
         return result
 
 solution=Solution()
