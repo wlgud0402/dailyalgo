@@ -14,3 +14,4 @@ solution=Solution()
 
 print(solution.replaceElements([17,18,5,4,6,1]))
 #출력 : [18,6,6,6,1,-1]
+
