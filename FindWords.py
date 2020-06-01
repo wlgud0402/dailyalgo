@@ -5,34 +5,35 @@
 
 3) 의미없는 리스트컴프리헨션 "abc"    ["a", "b", "c"]
 """
-
+import copy
 class Solution:
     def countCharacters(self, words, chars):
-        chars = [char for char in chars]
-
-        can_make_words = []
         count = {}
-
+        answer = 0
+        #count 로 chars의 철자별 갯수를 세줌
+        for char in chars:
+            try:   
+                count[char] += 1
+            except:
+                count[char] = 1 
+        #words의 word에서 반복문을 돌아 철자별로 확인해서 있는 것들을 count딕셔너리에서 빼줌       
         for word in words:
-            word = [spell for spell in word]
-            can_make = True
-            for i in range(len(word)):
-                if word[i] not in chars:
-                    can_make = False
+            count_copy = copy.deepcopy(count)
+            flag = True
+            for c in word:
+                try:
+                    if count_copy[c] == 0:
+                        flag = False
+                        break
+                    if count_copy[c] >= 1:
+                        count_copy[c] -= 1
+                except:
+                    flag = False
                     break
-            if can_make:
-                can_make_words.append(word)
-        
-        return len(sum(can_make_words, []))
+            if flag:
+                answer += len(word)
+        return answer
                 
-
-
 solution=Solution()
-
-print(solution.countCharacters(["cat","bt","hat","tree"],"atach"))
-
-"atachaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-
+print(solution.countCharacters(["cat","bt","hat","tree","atachhhhhh"],"atach"))
 print(solution.countCharacters(["hello","world","leetcode"],"welldonehoneyr"))
-#출력 atach 로 cat과 hat을 만들수 있따 3글자 + 3글자 => 6
-
