@@ -31,17 +31,13 @@ class Solution:
             copied_A += A
             count += 1
 
-            if len(copied_A) >= len(A) + len(B):  # while len(copied_A)<=len(A)+len(B): # cause if that's not the case, B is never going to be in A
-                print(copied_A , A, B)
+            if len(copied_A) >= len(A) + len(B):
                 break
         
-        # if B not in copied_A:
-        #     return -1
-        # else:
-        #     return count
-        return -1 if B not in copied_A else count
-
-        
+        if B not in copied_A:
+            return -1
+        else:
+            return count
 
 solution = Solution()
 print(solution.repeatedStringMatch("abcd","cdabcdab")) #3
