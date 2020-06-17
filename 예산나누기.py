@@ -11,3 +11,5 @@ def solution(companys, budget):
     return answer
     
 print(solution(	[2, 2, 3, 3], 10))
+
+#sort로 숫자들을 한번 정렬해서 논리적용하기 쉽게
