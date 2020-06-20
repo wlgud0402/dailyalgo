@@ -10,7 +10,7 @@ def hashad(x):
     return answer
     
 
-# print(solution(12))
+print(hashad(12))
 
 def average(arr):
     average = sum(arr) / len(arr)
