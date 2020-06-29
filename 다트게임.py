@@ -10,6 +10,7 @@ def solution(dartResult):
     
 
 print(solution("1S2D*3T"))
+print("hi")
 
-#최종 값=37	
+#최종 값=37	               
 # 11 * 2 + 22 * 2 + 33AASD
