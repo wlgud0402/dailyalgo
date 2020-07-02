@@ -26,7 +26,7 @@ def solution(n, words):
 
             if not words[i+1].startswith(words[i][-1]):
                 print("1")
-                return ["{}번째의 값은 그전문자의 마지막으로 시작하지 않음".format]
+                return ["{}번째의 값은 그전문자의 마지막으로 시작하지     않음".format]
 
 
         except:
