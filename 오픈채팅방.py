@@ -17,6 +17,10 @@
 
 #     return answer
 
+
+#아이디로구별 최종아이디  
+#아이디를 키값으로함 유일하니깐
+
 def solution(records):
     answer = []
     peoples_info = {}
@@ -32,8 +36,10 @@ def solution(records):
 
     for i in range(0,len(records)):
         new_record = records[i].split()
+
         if new_record[0] == "Enter":
             answer.append(peoples_info[new_record[1]]+"님이 들어왔습니다.")
+            
         elif new_record[0] == "Leave":
             answer.append(peoples_info[new_record[1]] + "님이 나갔습니다.")
 
