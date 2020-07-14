@@ -13,7 +13,7 @@ class Solution:
             for i in range(len(possible_nums)):
                 if sum(possible_nums[i])%3 == 0 and else_sum_num < sum(possible_nums[i]):
                     else_sum_num = sum(possible_nums[i])
-            return else_sum_num
+            return else_sum_num  
 
 
 
