@@ -7,7 +7,7 @@ class Solution:
                 answer.append(num)
 
         print(answer)
-        return len(answer)
+        return len(answer)      
 
 
 
@@ -21,4 +21,4 @@ class Solution:
 
 solution=Solution()
 print(solution.findNumbers([555,901,482,1771]))
-#결과 1
+#결과 1,            ok
