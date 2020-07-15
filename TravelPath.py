@@ -1,4 +1,5 @@
 paths = [["B","C"],["D","B"],["C","A"]]
+pathss = [["B","C"],["D","B"],["C","A"],["C","B"]]
 #Output = "A"
 class Solution:
     def destCity(self, paths):
@@ -17,6 +18,7 @@ class Solution:
 solution=Solution()
 
 print(solution.destCity(paths))
+print(solution.destCity(pathss))
 
 
         
