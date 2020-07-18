@@ -7,7 +7,7 @@ class Solution:
                 answer.append(num)
 
         print(answer)
-        return len(answer)      
+        return len(answer)         
 
 
 
