@@ -1,4 +1,4 @@
-#f스트링 사용하기
+#f스트링
 
 
 def solution(s):
