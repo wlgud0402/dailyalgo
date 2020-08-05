@@ -5,5 +5,7 @@ def solution(s):
 
 
 
+
+
 print(solution("baabaa")) #1
 print(solution("cdcd")) #0
