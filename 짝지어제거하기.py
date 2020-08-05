@@ -45,8 +45,8 @@ def solution(strings):
         answers.append(strings[i])
         try:
             if answers[i-1] == answers[i]:
-                answers.pop(i)
-                answers.pop(i-1)
+                answers.pop()
+                answers.pop()
         except:
             continue
 
