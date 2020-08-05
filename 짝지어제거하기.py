@@ -42,13 +42,10 @@
 def solution(strings):
     answers = [strings[0]]
     for i in range(1, len(strings)):
-        answers.append(strings[i])
-        try:
-            if answers[i-1] == answers[i]:
-                answers.pop()
-                answers.pop()
-        except:
-            continue
+        if len(answers) != 0 and answers[-1] == strings[i]:
+            answers.pop()
+        else:
+            answers.append(strings[i]) 
 
     if len(answers) == 0:
         return 1
