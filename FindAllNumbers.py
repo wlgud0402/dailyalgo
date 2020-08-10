@@ -9,10 +9,6 @@ class Solution:
         return answer
 
         
-
-
-
-
 solution = Solution()
 print(solution.findDisappearedNumbers([1,2,3,4,6,7,8,9]))
-        
+
