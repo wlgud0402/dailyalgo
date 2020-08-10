@@ -1,4 +1,3 @@
-import re
 class Solution:
     def mostCommonWord(self, sentence, ban):
         counts = {}
@@ -7,8 +6,7 @@ class Solution:
         sentence = sentence.replace("!","")
 
         sentence = sentence.split(" ")
-        print(sentence)
-
+        
         for i in range(len(sentence)):
             key = sentence[i].lower()
             
