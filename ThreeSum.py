@@ -32,8 +32,16 @@ class Solution:
                     possible = [nums[i], nums[j], -(nums[i] + nums[j])]
                     answer.append(possible)
 
-        tuple_answer = set(map(tuple, answer))
-        return [list(item) for item in tuple_answer]
+        # tuple_answer = set(map(tuple, answer))
+        # return [list(item) for item in tuple_answer]
+        new_answer = []
+        for an in answer:
+            if an in new_answer:
+                pass
+            else:
+                new_answer.append(an)
+        
+        return new_answer
 
 solution = Solution()
 print(solution.threeSum3([-1, 0, 1, 2, -1, -4]))
