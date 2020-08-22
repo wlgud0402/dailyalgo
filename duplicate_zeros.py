@@ -32,9 +32,5 @@ class Solution:
 #[1,0,0,2,3,0,0,4]
 
 
-
-
-
-
 solution = Solution()
 print(solution.duplicateZeros2([1,0,2,3,0,4,5,0]))
