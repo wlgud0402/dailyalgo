@@ -16,7 +16,6 @@ class Solution:
     #     print(numbers)
 
     def duplicateZeros2(self, numbers):
-        length = len(numbers)
         answer = []
         for i in range(len(numbers)):
             if numbers[i] == 0:
