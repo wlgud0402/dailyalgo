@@ -24,8 +24,14 @@ class Solution:
                   answer.append(0)
             else :
                 answer.append(numbers[i])
+
+        count = 0
+        for i in range(len(answer)):
+            if count < len(numbers):
+                  numbers[i] = answer[i]
+            count = count +1
         
-        numbers = answer[:length]
+        # numbers = answer[:length]
         print(numbers)
         
 
