@@ -8,8 +8,6 @@ class Solution:
         diff = (date1-date2).days
         return abs(diff)
 
-
-
 solution = Solution()
 print(solution.daysBetweenDates("2019-06-29","2019-06-30"))
 print(solution.daysBetweenDates("2020-01-15","2019-12-31"))
