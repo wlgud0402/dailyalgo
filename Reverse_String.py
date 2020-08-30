@@ -4,5 +4,5 @@ class Solution:
 
 
 solution = Solution()
-print(solution.reverseString(["h","e","l","l","o"]))
+print(solution.reverseString("["h","e","l","l","o"]"))
 #["o","l","l","e","h"]
