@@ -1,22 +1,11 @@
-# def almostIncreasingSequence(sequence):
-#     if len(sequence) - len(set(sequence)) > 1:
-#         return False
-
-#     flag = 0
-#     for i in range(len(sequence)-1):
-#         if sequence[i] < sequence[i+1]:
-#             continue
-#         else:
-#             flag += 1
-#             if flag >= 2:
-#                 return False
-#             else:
-#                 continue
-#     return True
-
+#time exceed
 def almostIncreasingSequence(sequence):
     if len(sequence) - len(set(sequence)) > 1:
         return False
+    
+    if len(sequence) == 1:
+        return True
+
 
     for i in range(len(sequence)):
         poped_sequence = list(sequence)
@@ -27,6 +16,36 @@ def almostIncreasingSequence(sequence):
     return False
 
 
-#         if sequence == sorted(list(set(sequence))): return True
+#if sequence == sorted(list(set(sequence))): return True
+
+#right answer
+def almostIncreasingSequence(sequence):
+    sequence_len = len(sequence)
+    p = -1
+    count = 0
+
+    for i in range(1,sequence_len):
+        if sequence[i-1] >= sequence[i]:
+            p = i
+            count += 1
+    
+    if count > 1: return False
+
+    if count == 0:
+        return True #ok
+
+    if p == sequence_len-1 or p == 1: 
+        return True #p == sequence_len-1 (마지막 경우에서 제거하는 경우) #p == 1 (첫번째에서 제거하는 경우)
+
+    if sequence[p-1] < sequence[p+1]: #p의 양쪽끼리 비교했을때 문제가 없을시 문제되는것은 p인덱스의 값
+        return True
+
+    if sequence[p-2] < sequence[p]:  #위의 경우를 지나쳐 온후 p-2 의 값과 p를 비교했을때 문제가 없다면 True
+                                     #문제가 있다면 False
+        return True
+    else:
+        return False
+
+print(almostIncreasingSequence([1, 2, 3, 4, 5, 4, 6]))
 
 print(almostIncreasingSequence([1, 2, 3, 4, 3, 6]))
