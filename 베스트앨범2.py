@@ -1,7 +1,8 @@
 #zip 없이 풀기
 
 def solution(genres, plays):
-    
+    for i, genre in enumerate(genres):
+        
 
 
 
