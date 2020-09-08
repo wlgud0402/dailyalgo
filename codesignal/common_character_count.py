@@ -22,3 +22,4 @@ def commonCharacterCount(s1, s2):
     return answer
 
 print(commonCharacterCount("aabcc", "adcaa"))
+
