@@ -6,7 +6,7 @@ def solution(genres, plays):
     index = [i for i in range(len(genres))]
     # zip을통해 장르와 플레이수를 묶어주기
     genres_plays_sets = list(zip(genres, plays, index))
-    print("장르플레이카운츠: ", genres_plays_sets)
+    # print("장르플레이카운츠: ", genres_plays_sets)
 
     # key가 hash에 들었는지 확인하고 값을 설정하거나 더해줌
     for genres_plays_set in genres_plays_sets:
@@ -21,16 +21,22 @@ def solution(genres, plays):
     # 만들어진 딕셔너리의 값을 기준으로 정렬
     sorted_play_count = sorted(
         play_count.items(), key=(lambda x: x[1]), reverse=True)
-    print("값을 기준으로 정렬한 플레이횟수: ", sorted_play_count)
+    # print("값을 기준으로 정렬한 플레이횟수: ", sorted_play_count)
 
-    genres_plays_sets.sort(key=lambda element: element[1])
-    print("값을 기준으로 정렬된 zip: ", genres_plays_sets)
+    genres_plays_sets.sort(key=lambda element: element[1], reverse=True)
+    # print("값을 기준으로 정렬된 zip: ", genres_plays_sets)
 
-    # answer = []
-    # for i in range(len(sorted_play_count)):
-    #     count = 0
-    #     for j in range(len(genres_plays_sets)):
-    #         if
+    answer = []
+    for i in range(len(sorted_play_count)):
+        count = 0
+        for j in range(len(genres_plays_sets)):
+            if count == 2:
+                break
+            if sorted_play_count[i][0] == genres_plays_sets[j][0]:
+                # print(sorted_play_count[i][0], genres_plays_sets[j][0])
+                answer.append(genres_plays_sets[j][2])
+                count += 1
+    return answer
 
 
 print(solution(["classic", "pop", "classic",
