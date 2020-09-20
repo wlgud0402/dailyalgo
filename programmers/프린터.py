@@ -1,4 +1,6 @@
 import copy
+# from collections import deque
+# priorities_with_index = deque([(i, v) for i, v in enumerate(priorities)]), popleft
 
 
 def solution(priorities, location):
