@@ -3,11 +3,12 @@ import copy
 
 def solution(citations):
     citations.sort()
-    # for i in range(len(citations)):
-    #     posible_index = copy.deepcopy(citations)
-    #     for j in range(len(citations)):
-    #         if
-    print(citations)
+    flag = True
+    while flag:
+        small = 0
+        big = 0
+        index = 0
+        for i in 
 
 
 print(solution([3, 0, 6, 1, 5]))
