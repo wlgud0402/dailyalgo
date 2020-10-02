@@ -2,17 +2,18 @@ import heapq
 
 
 def solution(scoville, K):
-    if min(scoville) >= K:
-        return 0
+    heap = []
+    for num in scoville:
+        heapq.heappush(heap, num)
 
     count = 0
-    while min(scoville) < K:
+    while heap[0] < K:
         try:
-            min_scoville = heapq.heappop(scoville)
-            sec_scoville = heapq.heappop(scoville)
+            min_scoville = heapq.heappop(heap)
+            sec_scoville = heapq.heappop(heap)
 
             mix = min_scoville + (sec_scoville * 2)
-            heapq.heappush(scoville, mix)
+            heapq.heappush(heap, mix)
 
             count += 1
             continue
@@ -21,4 +22,4 @@ def solution(scoville, K):
     return count
 
 
-print(solution([5], 6))
+print(solution([1, 2, 3, 9, 10, 12], 7))
