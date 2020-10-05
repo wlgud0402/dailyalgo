@@ -1,6 +1,7 @@
 def solution(brown, yellow):
     all_blocks = brown + yellow
 
+    # for i in range(3, all_blocks+1): 3보다 작은경우는 볼 필요가 없다.
     for i in range(1, all_blocks+1):
         if all_blocks % i == 0:
             height = i
