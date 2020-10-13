@@ -7,7 +7,6 @@ def areSimilar(a, b):
 
     for i in range(len(a)):
         for j in range(i+1, len(b)):
-            print(i, j)
             copy_a = copy.deepcopy(a)
             copy_b = copy.deepcopy(b)
 
