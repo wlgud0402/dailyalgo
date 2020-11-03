@@ -11,7 +11,6 @@ def variableName(name):
 
     if name[0].isalpha():
         pass
-
     elif name[0] == "_":
         pass
     else:
