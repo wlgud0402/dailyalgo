@@ -1,6 +1,16 @@
 def extractEachKth(inputArray, k):
-    new_array = [i for i in inputArray if i % k != 0]
-    return new_array
+    remove_list = []
+    for i, v in enumerate(inputArray):
+        if (i+1) % k == 0:
+            remove_list.append(v)
+
+    remove_list = list(set(remove_list))
+
+    while len(set(remove_list).intersection(inputArray)) != 0:
+        for i, v in enumerate(inputArray):
+            if v in remove_list:
+                inputArray.remove(v)
+    return inputArray
 
 
-print(extractEachKth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3))
+print(extractEachKth([1, 1, 1, 1, 1], 1))
