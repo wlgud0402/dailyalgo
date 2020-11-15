@@ -18,4 +18,4 @@ def isBeautifulString(inputString):
     return True
 
 
-print(isBeautifulString("bbbaacdafe"))  # true
+print(isBeautifulString("abcdefghijklmnopqrstuvwxyz"))  # true
