@@ -1,21 +1,13 @@
 
 def electionsWinners(votes, k):
     votes.sort()
-    len_votes = len(votes)
-    max_vote = max(votes)
     count = 0
-    for i, v in enumerate(votes):
-        if v + k > max_vote:
+    if votes[-1]+k > votes[-2]:
+        count += 1
+    for i in range(len(votes)-1):
+        if votes[i] + k > votes[-1]:
             count += 1
     return count
-    # votes.sort()
-    # len_votes = len(votes)
-    # print(votes, len_votes)
-    # for i, v in enumerate(votes):
-    #     if v + k > max(votes):
-    #         return len_votes - i
-
-    # return 0
 
 
-print(electionsWinners([1, 1, 1, 1], 0))
+print(electionsWinners([5, 1, 3, 4, 1], 0))  # 1
