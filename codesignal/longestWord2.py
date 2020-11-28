@@ -1,13 +1,16 @@
 def longestWord(text):
     string_list = ""
     for string in text:
-        if ("a" <= string <= "z") or ("A" <= string <= "Z"):
-            string_list += string
-        else:
-            if string_list[-1] == " ":
-                continue
+        try:
+            if ("a" <= string <= "z") or ("A" <= string <= "Z"):
+                string_list += string
             else:
-                string_list += " "
+                if string_list[-1] == " ":
+                    continue
+                else:
+                    string_list += " "
+        except:
+            continue
     split_string_list = string_list.split()
 
     max_len = len(split_string_list[0])
@@ -20,7 +23,7 @@ def longestWord(text):
     return max_str
 
 
-print(longestWord("You are the best!!!!!!!!!!![[!]] CodeFighter ever!"))
+print(longestWord(" ss "))
 
 # string = "D"
 # if string > "F":
