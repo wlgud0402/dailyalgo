@@ -16,6 +16,11 @@
 # print(digitsProduct(12))  # 26
 
 def digitsProduct(product):
+    if product == 0:
+        return 10
+    if product == 1:
+        return 1
+
     for i in range(1, 10000):
         number = str(i)
         total = 1
