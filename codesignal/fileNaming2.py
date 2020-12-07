@@ -17,7 +17,6 @@ def fileNaming(names):
         else:
             answer.append(name)
             count[name] = 0
-    print(count)
     return answer
 
     # answer = []
