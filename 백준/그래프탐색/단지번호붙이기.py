@@ -11,36 +11,45 @@ for _ in range(dong_count):
         row.append(int(c))
     matrix.append(row)
 
-print(matrix)
-dangi_count = 0
-ho_counts = []
+
+count = 2
 
 
-def dfs(x, y, count):
+def dfs(x, y):
     if x <= -1 or x >= dong_count or y <= -1 or y >= len(matrix[0]):
         return False
 
+    global count
     if matrix[x][y] == 1:
-        matrix[x][y] = 0
-        print(count)
-        count += 1
+        matrix[x][y] = count
 
-        dfs(x-1, y, count)
-        dfs(x, y-1, count)
-        dfs(x+1, y, count)
-        dfs(x, y+1, count)
+        dfs(x-1, y)
+        dfs(x, y-1)
+        dfs(x+1, y)
+        dfs(x, y+1)
 
-        ho_counts.append(count)
         return True
 
     return False
 
 
+dangi_count = 0
+ho_counts = {}
 for i in range(dong_count):
     for j in range(len(matrix[0])):
-        if dfs(i, j, 0) == True:
+        if dfs(i, j) == True:
+            ho_counts[count] = 0
+            count += 1
             dangi_count += 1
 
+for i in range(dong_count):
+    for j in range(len(matrix[0])):
+        if matrix[i][j] in ho_counts:
+            ho_counts[matrix[i][j]] += 1
 
-print(dangi_count, ho_counts)
-# print(ho_counts)
+ho_count = list(ho_counts.values())
+ho_count.sort()
+
+print(dangi_count)
+for i in range(len(ho_count)):
+    print(ho_count[i])
