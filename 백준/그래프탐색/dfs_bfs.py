@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 
-sys.stdin = open('test.txt')
+sys.stdin = open('dfs_bfs.txt')
 N, M, start = map(int, input().split(" "))
 graph = {}
 for i in range(1, N+1):

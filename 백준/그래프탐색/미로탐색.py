@@ -1,36 +1,37 @@
+import sys
 from collections import deque
 
-N, M = map(int, input().split())
-graph = []
+sys.stdin = open('미로탐색.txt')
+row_count, col_count = map(int, input().split(" "))
+matrix = []
+for _ in range(row_count):
+    row = []
+    for c in input():
+        row.append(int(c))
+    matrix.append(row)
 
-for i in range(n):
-    graph.append(list(map(int, input())))
+visited = set()
+visited.add((0, 0))
+queue = deque()
+queue.append([(0, 0), visited, 1])
 
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
+while len(queue) > 0:
+    poss, visited, count = queue.popleft()
+    r, c = poss
+    if r == row_count - 1 and c == col_count - 1:
+        print(count)
 
-
-def bfs(x, y):
-    queue = deque()
-    queue.append((x, y))
-    while queue:
-        x, y = queue.popleft()
-
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-
-            if nx < 0 or nx >= N or ny < 0 or ny >= M:
-                continue
-
-            if graph[nx][ny] == 0:
-                continue
-
-            if graph[nx][ny] == 1:
-                graph[nx][ny] = graph[x][y] + 1
-                queue.append((nx, ny))
-
-    return graph[N-1][M-1]
-
-
-print(bfs(0, 0))
+    for dr, dc in ((-1, 0), (0, 1), (1, 0), (0, -1)):
+        next_r = r + dr
+        next_c = c + dc
+        if(
+            next_r >= 0
+            and next_r < row_count
+            and next_c >= 0
+            and next_c < col_count
+            and matrix[next_r][next_c] == 1
+            and (next_r, next_c) not in visited
+        ):
+            _visited = set(visited)
+            _visited.add((next_r, next_c))
+            queue.append([(next_r, next_c), _visited, count + 1])
