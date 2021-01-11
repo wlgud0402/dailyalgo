@@ -1,42 +1,32 @@
-# def solution()
-from collections import deque
+import sys
 
-graph = [[1, 2],
-         [2, 3],
-         [1, 5],
-         [5, 2],
-         [5, 6],
-         [4, 7]]
+# sys.stdin = open('바이러스.txt')
+node_count = int(input())
+line_count = int(input())
 
+graph = {}
+for i in range(1, node_count+1):
+    graph[i] = []
 
-sorted_graph = sorted(graph)
-print(sorted_graph)
+for _ in range(line_count):
+    start, end = map(int, input().split(" "))
+    graph[start].append(end)
+    graph[start].sort(reverse=True)
 
-start_links = []
-for linked in sorted_graph:
-    if linked[0] == 1:
-        start_links.append(linked)
-print(start_links)
+visited = set()
+stack = []
+stack.append(1)
+visited.add(1)
 
+dfs = []
 
-# def dfs(x,y):
-#     if graph[x][0] != 0:
-#         graph[x][0] = 0
+while len(stack) > 0:
+    curr = stack.pop()
+    dfs.append(str(curr))
+    print(dfs)
+    for adj in graph[curr]:
+        if adj not in visited:
+            stack.append(adj)
+            visited.add(adj)
 
-#         dfs(graph[x][1], graph[x])
-
-
-# def bfs(graph, start, visited):
-#     queue = deque([start])
-#     visited[start] = True
-
-#     while queue:
-#         v = queue.popleft()
-#         print(v, end=' ')
-
-#         if not visited[]
-
-# # 7 computer
-# # 6 line
-# visited = [False] * 7
-# bfs(graph, 1, visited)
+print(len(dfs)-1)

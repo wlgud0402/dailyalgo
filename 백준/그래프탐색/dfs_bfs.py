@@ -10,6 +10,11 @@ for _ in range(M):
     s, e = map(int, input().split(" "))
     graph[s].append(e)
 
+for i in range(1, M):
+    graph[i].sort()
+
+print(graph)
+
 visited = set()
 stack = []
 stack.append(start)
@@ -24,6 +29,7 @@ while len(stack) > 0:
         if adj not in visited:
             stack.append(adj)
             visited.add(adj)
+
 
 visited = set()
 queue = deque()
