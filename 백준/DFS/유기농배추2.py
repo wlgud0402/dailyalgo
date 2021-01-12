@@ -1,9 +1,10 @@
-T = int(input())
+import sys
+T = int(sys.stdin.readline())
 for _ in range(T):
-    M, N, K = map(int, input().split(" "))
+    M, N, K = map(int, sys.stdin.readline().split(" "))
     veges = []
     for _ in range(K):
-        x, y = map(int, input().split(" "))
+        x, y = map(int, sys.stdin.readline().split(" "))
         veges.append([y, x])
 
         stack = []
