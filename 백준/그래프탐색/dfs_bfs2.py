@@ -26,7 +26,7 @@ dfs = []
 
 while len(stack) > 0:
     curr = stack.pop()
-    dfs.append(str(curr))  # print(curr)
+    dfs.append(str(curr))
     for adj in graph[curr]:
         if adj not in visited:
             stack.append(adj)
@@ -34,8 +34,6 @@ while len(stack) > 0:
 
             graph[curr].pop(0)
             break
-
-# print(dfs)
 
 visited = set()
 queue = deque()
@@ -51,10 +49,5 @@ while len(queue) > 0:
             queue.append(adj)
             visited.add(adj)
 
-# print(bfs)
-
 print(" ".join(dfs))
 print(" ".join(bfs))
-
-# 3 1 2 5 4
-# 3 1 4 2 5
