@@ -1,6 +1,4 @@
 import sys
-from collections import deque
-import copy
 
 sys.stdin = open('연결요소의개수.txt')
 N, M = map(int, sys.stdin.readline().split(" "))
@@ -13,7 +11,7 @@ for _ in range(M):
     graph[s].append(e)
     graph[e].append(s)
 
-for i in range(1, M):
+for i in range(1, N+1):
     graph[i].sort()
 
 print(graph)
@@ -21,21 +19,18 @@ count = 0
 visited = set()
 stack = []
 
-print(list(graph.values())[0][0])
+for i in range(1, N+1):
+    if i not in visited:
+        stack.append(i)
+        visited.add(i)
 
-# while len(stack) > 0:
-start = list(graph.values())[0][0]
+        while len(stack) > 0:
+            curr = stack.pop()
+            print(curr)
+            for adj in graph[curr]:
+                if adj not in visited:
+                    stack.append(adj)
+                    visited.add(adj)
 
-# for _ in range(2*N):
-
-
-# while len(stack) > 0:
-#     curr = stack.pop()
-#     dfs.append(str(curr))  # print(curr)
-#     for adj in graph[curr]:
-#         if adj not in visited:
-#             stack.append(adj)
-#             visited.add(adj)
-
-#             graph[curr].pop(0)
-#             break
+        count += 1
+print("count: ", count)
