@@ -32,6 +32,7 @@ print(visited)
 print(need_to_fill)
 
 while len(queue) > 0:
+    day += 1
     print(queue)
     r, c = queue.popleft()
     matrix[r][c] = 1
@@ -52,6 +53,8 @@ while len(queue) > 0:
         ):
             queue.append((next_r, next_c))
             visited.add((next_r, next_c))
+            print("adddded")
+            print("added queue", queue)
 
 if len(visited) == need_to_fill:
     print(day)
