@@ -17,8 +17,6 @@ for i in range(row_count):
         if matrix[i][j] != 0:
             ices.append((i, j))
 
-print(ices)
-
 global day_count
 day_count = 0
 flag = True
