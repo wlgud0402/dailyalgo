@@ -64,15 +64,15 @@ while flag:
                 melting_point_speed.add(
                     (r, c, surround_water_count))
 
+    for i in range(row_count):
+        print(matrix[i])
+    print("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ")
+    break
+
     for r, c, surround_water_count in melting_point_speed:
         if matrix[r][c] - surround_water_count > 0:
             matrix[r][c] -= surround_water_count
         else:
             matrix[r][c] = 0
     again = True
-    break
-
-    for i in range(row_count):
-        print(matrix[i])
-    print("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ")
     break
