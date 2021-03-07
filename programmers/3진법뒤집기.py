@@ -21,7 +21,7 @@ def solution(n):
 
     n = n[::-1]
     answer = int(n, 3)
-    print(answer)
+    return answer
 
 
 print(solution(45))  # 45 => 1200 => 0021 => 7
