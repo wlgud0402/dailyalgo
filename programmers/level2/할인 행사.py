@@ -10,7 +10,6 @@ def solution(want, number, discount):
 
     for i in range(len(discount)-9):
         discount_map = Counter(discount[i:i+10])
-        print(i)
         if discount_map == want_map:
             possible_day_count += 1
 
